@@ -2,6 +2,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.pyplot import title
 from sklearn.model_selection import StratifiedShuffleSplit
 from sklearn.linear_model import LinearRegression
 
@@ -25,7 +26,7 @@ for set_ in (strat_train_set, strat_test_set):
 
 # Step 3: Visualization of data distribution (scatter plot)
 housing = strat_train_set.copy()
-housing.plot(kind='scatter', x='longitude', y='latitude', alpha=0.4,
+housing.plot(kind='scatter', x='longitude', y='latitude',title = 'heatmap California', alpha=0.4,
              s=housing['population'] / 100, label='Population', figsize=(12, 8),
              c='median_house_value', cmap=plt.get_cmap('jet'), colorbar=True)
 plt.legend()
